@@ -1,0 +1,24 @@
+# Compilation et paquets
+build/
+dist/
+.tools/
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.zip
+
+# Données créées par le client à l'exécution (fichiers personnels)
+configs/profiles/
+configs/.trash/
+configs/client.json
+logs/
+crosshairs/
+map-extensions/waypoints.json
+
+# Éditeurs
+.vs/
+.vscode/
+*.user

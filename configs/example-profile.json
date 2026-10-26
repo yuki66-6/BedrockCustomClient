@@ -1,0 +1,44 @@
+{
+  "format": 1,
+  "client": "BedrockCustomClient",
+  "version": "1.0.0",
+  "sections": {
+    "modules": {
+      "keystrokes": { "enabled": true, "settings": { "style": "Moderne", "show_mouse": true, "show_cps": true, "show_space": false } },
+      "info_bar": { "enabled": true, "settings": { "show_cps": true, "show_ping": true, "show_fps": false, "show_clock": true } },
+      "cps": { "enabled": false, "settings": { "mode": "Les deux", "only_in_game": true } },
+      "crosshair": {
+        "enabled": true,
+        "settings": { "style": "Croix + point", "size": 6.0, "gap": 3.0, "thickness": 2.0, "color": [0.35, 0.65, 1.0, 1.0], "outline": true, "dynamic": true }
+      },
+      "ping": { "enabled": true, "settings": { "host": "geo.hivebedrock.network", "port": 19132, "interval": 3.0 } },
+      "reach_lab": { "enabled": false, "settings": { "sim_reach": 3.0, "target_distance": 2.8, "preset": "Vanilla 3.00" } },
+      "session": { "enabled": false, "settings": {} }
+    },
+    "theme": {
+      "preset": "Bleu",
+      "accent": [0.27, 0.54, 1.0, 1.0],
+      "panel_alpha": 0.94,
+      "rounding": 6.0,
+      "ui_scale": 1.0,
+      "animations": true,
+      "tilt": 0.55,
+      "parallax": true,
+      "dim_background": false
+    },
+    "hud": {
+      "settings": { "scale": 1.0, "background": true, "snap": true },
+      "layout": {}
+    },
+    "client": {
+      "menu_key": 45,
+      "hud_only_when_game_focused": true,
+      "follow_game_window": true,
+      "keybinds_require_game_focus": true,
+      "fps_limit": 0,
+      "autosave": true,
+      "autosave_delay": 1.5
+    },
+    "gui": { "page": 0 }
+  }
+}

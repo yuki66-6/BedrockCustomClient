@@ -1,0 +1,12 @@
+{
+  // Exemple d'extension de carte : copie ce fichier, renomme-le et modifie-le.
+  // Format complet : docs/EXTENDING.md, section 3.
+  "name": "Exemple",
+  "markers": [
+    { "label": "Origine du monde", "x": 0, "z": 0, "color": "#FFD040", "icon": "star" }
+  ],
+  "areas": [],
+  "blockColors": {
+    "exemple_addon:bloc_rubis": "#D0204A"
+  }
+}
