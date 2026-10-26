@@ -114,6 +114,21 @@ Prérequis : Windows 10 ou 11 64 bits, Minecraft for Windows (Bedrock), carte gr
 Utilise Minecraft en **fenêtré** ou **fenêtré sans bordure** : en plein écran exclusif, le jeu peut passer au-dessus de l'overlay.
 Désinstallation : icône de la zone de notification → **Quitter**, puis supprime le dossier.
 
+### Pack de ressources « UMC PvP UI » (dans le jeu)
+
+Seule façon de changer l'interface **à l'intérieur** de Minecraft Bedrock sans toucher au jeu : un pack de ressources.
+Il marche en solo, sur les serveurs et sur les Realms (pack global), sans rien installer côté serveur.
+
+- **9 réticules** au choix : croix vanilla, croix avec écart, croix écartée + point, point, petit plus, T, carré, cercle.
+- **Hotbar sombre** translucide et **case sélectionnée bleue** (couleur du thème).
+
+Installation : double-clique sur `UMC-PvP-UI-1.1.0.mcpack` (Minecraft l'importe), puis **Paramètres → Ressources globales**,
+active « UMC PvP UI ». Pour changer de réticule : clique sur le pack activé → icône **engrenage** → choisis le réticule.
+
+Un pack ne peut afficher que des images et l'interface du jeu : pas de CPS, de ping, de keystrokes ni de coordonnées
+supplémentaires (pour les coordonnées, active l'option du jeu « Afficher les coordonnées »).
+Généré par `python tools/make_resource_pack.py` (images dessinées par le script, aucune texture de Mojang).
+
 ### Fonctionnalités
 
 - Menu ClickGUI à perspective 3D, thème personnalisable, recherche, raccourcis par module, éditeur de HUD.
@@ -216,6 +231,8 @@ Vérifié automatiquement lors de la génération de cette version :
 
 **Non vérifié en conditions réelles** :
 
+- Pack de ressources Bedrock : contenu vérifié automatiquement (manifeste, tailles des images identiques à celles du jeu,
+  sous-packs), mais **pas encore importé dans Minecraft**.
 - Java : le mod n'a **pas encore été lancé dans Minecraft**. Menu, HUD, modules, mixins (zoom, comptage des clics) et
   commandes /tp sont à confirmer en jeu.
 - Bedrock : affichage par-dessus Minecraft dans chaque mode d'affichage, retour du focus au jeu, ping vers un serveur réel.
