@@ -5,7 +5,7 @@
 namespace bcc {
 
 ClientSettings::ClientSettings() {
-    menuKey = add<KeySetting>("menu_key", "Touche du menu", "Ouvre/ferme la ClickGUI (raccourci global)", VK_INSERT);
+    menuKey = add<KeySetting>("menu_key", "Touche du menu", "Ouvre/ferme la ClickGUI", VK_RSHIFT);
     hudOnlyWhenGameFocused = add<BoolSetting>(
         "hud_only_when_game_focused", "HUD seulement en jeu",
         "Masque le HUD quand Minecraft n'est pas la fenêtre active", true);

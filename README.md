@@ -45,7 +45,7 @@ Rien d'autre n'est modifié : supprimer le jar du dossier `mods` désinstalle le
 
 | Action | Touche / geste |
 |---|---|
-| Ouvrir / fermer le menu | `Insert` (modifiable dans Options → Commandes → Universal Minecraft Client) |
+| Ouvrir / fermer le menu | `Maj droite` (modifiable dans Options → Commandes → Universal Minecraft Client) |
 | Zoom | Maintenir `C` |
 | Waypoint à ta position | `B` |
 | Activer un module | Interrupteur de sa carte, ou clic droit sur la carte |
@@ -105,7 +105,8 @@ et ne modifie aucun de ses fichiers.
 Prérequis : Windows 10 ou 11 64 bits, Minecraft for Windows (Bedrock), carte graphique Direct3D 11. Aucun droit administrateur.
 
 1. Extrais `BedrockCustomClient-1.1.0-win64.zip` dans un dossier où tu peux écrire (par exemple `Documents\BedrockCustomClient`).
-2. Lance `BedrockCustomClient.exe`, puis `Insert` pour ouvrir le menu.
+2. Lance `BedrockCustomClient.exe`, puis `Maj droite` pour ouvrir le menu (modifiable : Settings → Raccourcis).
+   La touche n'agit que quand Minecraft ou le menu est au premier plan, et elle arrive toujours au jeu.
 
 > **SmartScreen** : l'exécutable n'est pas signé. Si Windows affiche « Windows a protégé votre ordinateur », clique
 > **Informations complémentaires → Exécuter quand même**.

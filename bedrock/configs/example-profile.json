@@ -31,7 +31,7 @@
       "layout": {}
     },
     "client": {
-      "menu_key": 45,
+      "menu_key": 161,
       "hud_only_when_game_focused": true,
       "follow_game_window": true,
       "keybinds_require_game_focus": true,

@@ -162,6 +162,9 @@ bool Application::init() {
         keybinds_->setReservedKey(client_->menuKey->get());
     });
     keybinds_->setReservedKey(client_->menuKey->get());
+    menuKeySub_ = Subscription(*bus_, bus_->subscribe<KeyEvent>([this](const KeyEvent& e) {
+        onRawMenuKey(e.vk, e.down, e.repeat, e.gameFocused, e.overlayFocused);
+    }));
 
     tray_ = std::make_unique<TrayIcon>();
     tray_->create(hwnd_, L"Bedrock Custom Client");
@@ -270,7 +273,8 @@ void Application::shutdown() {
         ImGui::DestroyContext();
     }
     if (tray_) tray_->destroy();
-    if (hwnd_ && registeredMenuVk_) UnregisterHotKey(hwnd_, kMenuHotkeyId);
+    menuKeySub_.reset();
+    if (hwnd_ && registeredMenuVk_ && !rawMenuKey_) UnregisterHotKey(hwnd_, kMenuHotkeyId);
     registeredMenuVk_ = 0;
     gui_.reset();
     textures_.reset();
@@ -294,14 +298,30 @@ void Application::shutdown() {
     log::shutdown();
 }
 
+// Maj, Ctrl et Alt seules ne déclenchent jamais RegisterHotKey (vérifié) ; un raccourci
+// « Maj + Maj » avalerait en plus la touche, donc l'accroupissement du jeu.
+static bool isModifierVk(int vk) {
+    switch (vk) {
+    case VK_LSHIFT: case VK_RSHIFT: case VK_LCONTROL: case VK_RCONTROL: case VK_LMENU: case VK_RMENU: return true;
+    default: return false;
+    }
+}
+
 bool Application::registerMenuHotkey(int vk) {
     if (!hwnd_) return false;
     if (registeredMenuVk_ == vk) return true;
-    if (registeredMenuVk_) UnregisterHotKey(hwnd_, kMenuHotkeyId);
+    if (registeredMenuVk_ && !rawMenuKey_) UnregisterHotKey(hwnd_, kMenuHotkeyId);
     registeredMenuVk_ = 0;
+    rawMenuKey_ = false;
     if (!vk) {
         notifications_->warning("Aucune touche de menu : utilise l'icône de la zone de notification pour l'ouvrir.");
         return false;
+    }
+    if (isModifierVk(vk)) {
+        // Lue passivement par Raw Input : la touche arrive toujours au jeu.
+        rawMenuKey_ = true;
+        registeredMenuVk_ = vk;
+        return true;
     }
     // RegisterHotKey est l'API documentée pour un raccourci global ; elle
     // autorise aussi l'overlay à passer au premier plan quand on l'ouvre.
@@ -344,6 +364,16 @@ void Application::openConfigsFolder() {
     ShellExecuteW(nullptr, L"open", dir.c_str(), nullptr, nullptr, SW_SHOWNORMAL);
 }
 
+// Touche de menu « modificateur » : seulement quand Minecraft ou le menu est au premier
+// plan (Maj droite sert aussi à écrire dans les autres applications).
+void Application::onRawMenuKey(int vk, bool down, bool repeat, bool gameFocused, bool overlayFocused) {
+    if (!rawMenuKey_ || vk != registeredMenuVk_ || !down || repeat) return;
+    if (!gameFocused && !overlayFocused) return;
+    if (keybinds_ && keybinds_->capturing()) return;
+    if (menuOpen_ && ImGui::GetCurrentContext() && ImGui::GetIO().WantTextInput) return; // saisie de texte en cours
+    setMenuOpen(!menuOpen_);
+}
+
 void Application::setMenuOpen(bool open) {
     if (open == menuOpen_ || !gui_) return;
     menuOpen_ = open;
@@ -363,6 +393,8 @@ void Application::setMenuOpen(bool open) {
             ClipCursor(nullptr); // libère la souris si le jeu la retenait
             SetForegroundWindow(hwnd_);
             SetFocus(hwnd_);
+            if (GetForegroundWindow() != hwnd_)
+                notifications_->info("Clique dans le menu pour l'utiliser (Windows a gardé le jeu au premier plan).");
         }
     } else if (game_ && game_->state().found && !options_.selftest && GetForegroundWindow() == hwnd_) {
         SetForegroundWindow(game_->state().hwnd); // rend la main au jeu

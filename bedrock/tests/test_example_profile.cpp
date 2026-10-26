@@ -37,5 +37,5 @@ TEST_CASE("Profil d'exemple livré : chargé sans aucun avertissement") {
     CHECK(modules.find("crosshair")->enabled());
     CHECK(static_cast<EnumSetting*>(modules.find("crosshair")->findSetting("style"))->current() == "Croix + point");
     CHECK(static_cast<StringSetting*>(modules.find("ping")->findSetting("host"))->get() == "geo.hivebedrock.network");
-    CHECK(client.menuKey->get() == 0x2D); // Insert
+    CHECK(client.menuKey->get() == 0xA1); // VK_RSHIFT : Maj droite
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "core/EventBus.h"
 #include "modules/Module.h"
 
 #include <windows.h>
@@ -63,6 +64,7 @@ private:
     void launchMinecraft();
     void openConfigsFolder();
     bool registerMenuHotkey(int vk);
+    void onRawMenuKey(int vk, bool down, bool repeat, bool gameFocused, bool overlayFocused);
     bool overlayShouldBeVisible() const;
     bool hudShouldBeVisible() const;
     bool waitForNextFrame();
@@ -82,6 +84,7 @@ private:
     bool windowShown_ = false;
     bool clickThrough_ = true;
     int registeredMenuVk_ = 0;
+    bool rawMenuKey_ = false; // touche de menu lue par Raw Input (Maj, Ctrl, Alt seules)
     RECT overlayRect_{};
     float dpiScale_ = 1.f;
     double startTime_ = 0;
@@ -112,6 +115,7 @@ private:
     std::unique_ptr<ClickGUI> gui_;
     std::unique_ptr<TrayIcon> tray_;
     ModuleContext moduleCtx_;
+    Subscription menuKeySub_;
 
     // Autotest
     struct SelftestState {

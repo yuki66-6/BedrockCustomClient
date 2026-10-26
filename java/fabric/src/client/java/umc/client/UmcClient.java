@@ -98,7 +98,7 @@ public final class UmcClient implements ClientModInitializer {
 		ps.setAutosave(Umc.gui.autosave.on(), 1.5);
 		Umc.gui.autosave.onChange(() -> ps.setAutosave(Umc.gui.autosave.on(), 1.5));
 
-		Umc.openGuiKey = KeyMappingHelper.registerKeyMapping(new KeyMapping("key.umc.open_gui", InputConstants.KEY_INSERT, CATEGORY));
+		Umc.openGuiKey = KeyMappingHelper.registerKeyMapping(new KeyMapping("key.umc.open_gui", InputConstants.KEY_RSHIFT, CATEGORY));
 		Umc.zoomKey = KeyMappingHelper.registerKeyMapping(new KeyMapping("key.umc.zoom", InputConstants.KEY_C, CATEGORY));
 		Umc.addWaypointKey = KeyMappingHelper.registerKeyMapping(new KeyMapping("key.umc.add_waypoint", InputConstants.KEY_B, CATEGORY));
 		Umc.modules.get(ZoomModule.class).setKey(Umc.zoomKey);
