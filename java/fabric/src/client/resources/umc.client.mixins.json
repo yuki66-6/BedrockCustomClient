@@ -1,0 +1,9 @@
+{
+	"required": true,
+	"package": "umc.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": ["CameraMixin", "KeyMappingMixin"],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -5,7 +5,7 @@
 namespace bcc::map {
 
 // ============================================================================
-//  TA SOURCE DE CARTE — à compléter (voir docs/EXTENDING.md, section 5 bis).
+//  TA SOURCE DE CARTE — à compléter (voir docs/EXTENDING.md, section 7).
 //
 //  Elle apparaît dans la page Carte sous le nom renvoyé par name(). Deux façons
 //  de l'utiliser :

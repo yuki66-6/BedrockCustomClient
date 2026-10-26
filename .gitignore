@@ -22,3 +22,7 @@ map-extensions/waypoints.json
 .vs/
 .vscode/
 *.user
+
+# Mod Java (Gradle / Loom)
+.gradle/
+java/fabric/run/

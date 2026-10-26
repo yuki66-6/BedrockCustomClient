@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "umc",
+	"version": "${version}",
+	"name": "Universal Minecraft Client",
+	"description": "Client PvP/survie modulaire (ClickGUI, HUD, waypoints) partageant ses profils avec la version Bedrock. Aucune fonction ne contourne les règles d'un serveur.",
+	"authors": ["yuki66-6"],
+	"contact": {
+		"sources": "https://github.com/yuki66-6/BedrockCustomClient"
+	},
+	"icon": "assets/umc/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": ["umc.client.UmcClient"]
+	},
+	"mixins": [
+		{ "config": "umc.client.mixins.json", "environment": "client" }
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
