@@ -26,3 +26,6 @@ map-extensions/waypoints.json
 # Mod Java (Gradle / Loom)
 .gradle/
 java/fabric/run/
+
+# Python
+__pycache__/
