@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "format": "umc-profile",
+  "formatVersion": 2,
+  "name": "BedWars",
+  "description": "Clics, touches, ping et réticule pour les parties rapides.",
+  "edition": "common",
+  "clientVersion": "1.1.0",
+  "modules": {
+    "keystrokes": {
+      "enabled": true
+    },
+    "cps": {
+      "enabled": true
+    },
+    "info_bar": {
+      "enabled": true
+    },
+    "crosshair": {
+      "enabled": true
+    },
+    "ping": {
+      "enabled": true
+    },
+    "toggle_sprint": {
+      "enabled": true
+    },
+    "armor_hud": {
+      "enabled": true
+    }
+  },
+  "theme": {
+    "accent": [
+      0.27,
+      0.54,
+      1.0,
+      1.0
+    ]
+  }
+}

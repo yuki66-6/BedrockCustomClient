@@ -1,0 +1,593 @@
+{
+  "format": "umc-modules",
+  "formatVersion": 1,
+  "modules": [
+    {
+      "id": "cps",
+      "category": "combat",
+      "name": {
+        "fr": "CPS Counter",
+        "en": "CPS Counter"
+      },
+      "description": {
+        "fr": "Clics par seconde gauche/droite.",
+        "en": "Left/right clicks per second."
+      },
+      "requiredCapabilities": [
+        "mouse_input"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "tested",
+          "note": "Raw Input ; clics comptés quand Minecraft a le focus."
+        }
+      }
+    },
+    {
+      "id": "reach_lab",
+      "category": "combat",
+      "name": {
+        "fr": "Reach Lab",
+        "en": "Reach Lab"
+      },
+      "description": {
+        "fr": "Simulateur local de portée. Ne modifie jamais la portée en jeu.",
+        "en": "Local reach simulator. Never changes in-game reach."
+      },
+      "requiredCapabilities": [],
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "tested",
+          "note": "Simulation géométrique uniquement."
+        }
+      }
+    },
+    {
+      "id": "combat_hud",
+      "category": "combat",
+      "name": {
+        "fr": "Combat HUD",
+        "en": "Combat HUD"
+      },
+      "requiredCapabilities": [
+        "mouse_input"
+      ],
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "implemented"
+        }
+      }
+    },
+    {
+      "id": "totem_counter",
+      "category": "combat",
+      "name": {
+        "fr": "Totem Counter",
+        "en": "Totem Counter"
+      },
+      "description": {
+        "fr": "Nombre de totems d'immortalité dans l'inventaire.",
+        "en": "Totems of undying in the inventory."
+      },
+      "requiredCapabilities": [
+        "inventory"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported",
+          "note": "Inventaire non exposé à un overlay externe."
+        }
+      }
+    },
+    {
+      "id": "combo_counter",
+      "category": "combat",
+      "name": {
+        "fr": "Combo Counter",
+        "en": "Combo Counter"
+      },
+      "requiredCapabilities": [
+        "player_health"
+      ],
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "unsupported"
+        }
+      }
+    },
+    {
+      "id": "crystal_damage_calculator",
+      "category": "combat",
+      "name": {
+        "fr": "Crystal Damage Calculator",
+        "en": "Crystal Damage Calculator"
+      },
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "planned",
+          "note": "Calculateur hors jeu (règles Bedrock)."
+        }
+      }
+    },
+    {
+      "id": "keystrokes",
+      "category": "movement",
+      "name": {
+        "fr": "Keystrokes",
+        "en": "Keystrokes"
+      },
+      "requiredCapabilities": [
+        "keyboard_input",
+        "mouse_input"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "tested"
+        }
+      }
+    },
+    {
+      "id": "toggle_sprint",
+      "category": "movement",
+      "name": {
+        "fr": "ToggleSprint",
+        "en": "ToggleSprint"
+      },
+      "description": {
+        "fr": "Sprint maintenu sans garder la touche (comme l'option vanilla).",
+        "en": "Keeps sprinting without holding the key (like the vanilla option)."
+      },
+      "requiredCapabilities": [
+        "movement_toggles"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported",
+          "note": "Utiliser l'option « Basculer le sprint » des paramètres de Minecraft Bedrock."
+        }
+      }
+    },
+    {
+      "id": "toggle_sneak",
+      "category": "movement",
+      "name": {
+        "fr": "ToggleSneak",
+        "en": "ToggleSneak"
+      },
+      "requiredCapabilities": [
+        "movement_toggles"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported",
+          "note": "Utiliser l'option « Basculer l'accroupissement » de Minecraft Bedrock."
+        }
+      }
+    },
+    {
+      "id": "sprint",
+      "category": "movement",
+      "name": {
+        "fr": "Sprint Status",
+        "en": "Sprint Status"
+      },
+      "requiredCapabilities": [
+        "keyboard_input"
+      ],
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "implemented",
+          "note": "Déduit du clavier."
+        }
+      }
+    },
+    {
+      "id": "jumps",
+      "category": "movement",
+      "name": {
+        "fr": "Jump Counter",
+        "en": "Jump Counter"
+      },
+      "requiredCapabilities": [
+        "keyboard_input"
+      ],
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "implemented",
+          "note": "Compte les appuis sur Saut."
+        }
+      }
+    },
+    {
+      "id": "speed",
+      "category": "movement",
+      "name": {
+        "fr": "Speed Meter",
+        "en": "Speed Meter"
+      },
+      "requiredCapabilities": [
+        "player_velocity"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported",
+          "note": "Vitesse non exposée à un overlay externe : affichée N/D."
+        }
+      }
+    },
+    {
+      "id": "coordinates",
+      "category": "movement",
+      "name": {
+        "fr": "Coordinates HUD",
+        "en": "Coordinates HUD"
+      },
+      "description": {
+        "fr": "Coordonnées X/Y/Z, chunk et équivalent Nether/Overworld.",
+        "en": "X/Y/Z, chunk and Nether/Overworld equivalent."
+      },
+      "requiredCapabilities": [
+        "player_position"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported",
+          "note": "Activer « Afficher les coordonnées » dans les paramètres du monde Bedrock."
+        }
+      }
+    },
+    {
+      "id": "direction",
+      "category": "movement",
+      "name": {
+        "fr": "Direction HUD",
+        "en": "Direction HUD"
+      },
+      "requiredCapabilities": [
+        "player_rotation"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported"
+        }
+      }
+    },
+    {
+      "id": "crosshair",
+      "category": "render",
+      "name": {
+        "fr": "Custom Crosshair",
+        "en": "Custom Crosshair"
+      },
+      "requiredCapabilities": [],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "tested",
+          "note": "Le réticule du jeu reste visible (pack de ressources pour le masquer)."
+        }
+      }
+    },
+    {
+      "id": "zoom",
+      "category": "render",
+      "name": {
+        "fr": "Zoom",
+        "en": "Zoom"
+      },
+      "requiredCapabilities": [
+        "fov_control"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported",
+          "note": "Pas de contrôle du FOV sans modifier le jeu."
+        }
+      }
+    },
+    {
+      "id": "fps",
+      "category": "render",
+      "name": {
+        "fr": "FPS Counter",
+        "en": "FPS Counter"
+      },
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2",
+          "note": "FPS réel du jeu."
+        },
+        "bedrock": {
+          "status": "partial",
+          "note": "FPS de l'overlay seulement ; celui du jeu n'est pas exposé."
+        }
+      }
+    },
+    {
+      "id": "ping",
+      "category": "render",
+      "name": {
+        "fr": "Ping",
+        "en": "Ping"
+      },
+      "requiredCapabilities": [
+        "server_latency"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2",
+          "note": "Latence du tableau des joueurs."
+        },
+        "bedrock": {
+          "status": "partial",
+          "note": "Requête publique RakNet vers un serveur configuré."
+        }
+      }
+    },
+    {
+      "id": "info_bar",
+      "category": "render",
+      "name": {
+        "fr": "Info Bar",
+        "en": "Info Bar"
+      },
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "implemented"
+        }
+      }
+    },
+    {
+      "id": "armor_hud",
+      "category": "render",
+      "name": {
+        "fr": "Armor HUD",
+        "en": "Armor HUD"
+      },
+      "requiredCapabilities": [
+        "player_armor"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported"
+        }
+      }
+    },
+    {
+      "id": "potion_effects",
+      "category": "render",
+      "name": {
+        "fr": "Potion Effects HUD",
+        "en": "Potion Effects HUD"
+      },
+      "description": {
+        "fr": "Effets actifs confirmés par le jeu, niveau et durée restante.",
+        "en": "Active effects confirmed by the game, level and remaining time."
+      },
+      "requiredCapabilities": [
+        "potion_effects"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported"
+        }
+      }
+    },
+    {
+      "id": "time_hud",
+      "category": "render",
+      "name": {
+        "fr": "Time HUD",
+        "en": "Time HUD"
+      },
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "planned"
+        }
+      }
+    },
+    {
+      "id": "session",
+      "category": "player",
+      "name": {
+        "fr": "Session Stats",
+        "en": "Session Stats"
+      },
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "implemented"
+        }
+      }
+    },
+    {
+      "id": "player_info",
+      "category": "player",
+      "name": {
+        "fr": "Player Info",
+        "en": "Player Info"
+      },
+      "editions": {
+        "java": {
+          "status": "planned"
+        },
+        "bedrock": {
+          "status": "partial",
+          "note": "Fenêtre du jeu uniquement."
+        }
+      }
+    },
+    {
+      "id": "waypoints",
+      "category": "utility",
+      "name": {
+        "fr": "Waypoints",
+        "en": "Waypoints"
+      },
+      "description": {
+        "fr": "Waypoints par monde/serveur et par dimension, au format commun.",
+        "en": "Waypoints per world/server and dimension, in the shared format."
+      },
+      "requiredCapabilities": [
+        "player_position",
+        "world_identity"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2",
+          "note": "Liste HUD avec distance et direction ; pas encore de balise 3D."
+        },
+        "bedrock": {
+          "status": "partial",
+          "note": "Sur la carte des sauvegardes uniquement.",
+          "providedBy": "map_page"
+        }
+      }
+    },
+    {
+      "id": "death_waypoint",
+      "category": "player",
+      "name": {
+        "fr": "Death Waypoint",
+        "en": "Death Waypoint"
+      },
+      "requiredCapabilities": [
+        "death_events",
+        "player_position"
+      ],
+      "editions": {
+        "java": {
+          "status": "implemented",
+          "versions": "26.2"
+        },
+        "bedrock": {
+          "status": "unsupported"
+        }
+      }
+    },
+    {
+      "id": "performance_presets",
+      "category": "render",
+      "name": {
+        "fr": "Performance",
+        "en": "Performance"
+      },
+      "description": {
+        "fr": "Préréglages et réglages des options graphiques du jeu pour gagner des FPS.",
+        "en": "Presets and tuning of the game's graphics options to gain FPS."
+      },
+      "requiredCapabilities": [],
+      "editions": {
+        "java": {
+          "status": "planned",
+          "note": "Options vanilla + recommandation de Sodium/Lithium/FerriteCore/Entity Culling."
+        },
+        "bedrock": {
+          "status": "planned",
+          "note": "Modification de options.txt de Minecraft uniquement avec confirmation et copie de sauvegarde."
+        }
+      }
+    },
+    {
+      "id": "shader_manager",
+      "category": "render",
+      "name": {
+        "fr": "Shaders",
+        "en": "Shaders"
+      },
+      "description": {
+        "fr": "Gestion des packs de shaders.",
+        "en": "Shader pack management."
+      },
+      "requiredCapabilities": [],
+      "editions": {
+        "java": {
+          "status": "planned",
+          "note": "Via Iris (installé avec confirmation) et le dossier shaderpacks."
+        },
+        "bedrock": {
+          "status": "unsupported",
+          "note": "Les shaders Bedrock passent par une injection (BetterRenderDragon…) ou le remplacement des fichiers protégés du jeu : exclus du client. Installables par l'utilisateur, à part."
+        }
+      }
+    }
+  ]
+}

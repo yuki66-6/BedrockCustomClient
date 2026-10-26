@@ -1,0 +1,55 @@
+{
+  "$schema": "../schemas/waypoints.schema.json",
+  "format": "umc-waypoints",
+  "formatVersion": 1,
+  "categories": [
+    {
+      "id": "base",
+      "name": "Base",
+      "color": "#458AFF"
+    },
+    {
+      "id": "resource",
+      "name": "Ressources",
+      "color": "#4DDB85"
+    },
+    {
+      "id": "danger",
+      "name": "Danger",
+      "color": "#F2525A"
+    },
+    {
+      "id": "death",
+      "name": "Morts",
+      "color": "#9EA3B3"
+    },
+    {
+      "id": "other",
+      "name": "Autre",
+      "color": "#FFB84D"
+    }
+  ],
+  "worlds": {
+    "java:sp:Exemple": {
+      "name": "Exemple",
+      "edition": "java",
+      "kind": "singleplayer",
+      "waypoints": [
+        {
+          "id": "exemple-base",
+          "name": "Base",
+          "x": 120,
+          "y": 64,
+          "z": -340,
+          "dimension": "overworld",
+          "category": "base",
+          "color": "#458AFF",
+          "icon": "home",
+          "visible": true,
+          "createdAt": 1793000000,
+          "source": "user"
+        }
+      ]
+    }
+  }
+}

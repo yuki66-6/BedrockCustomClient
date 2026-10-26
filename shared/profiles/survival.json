@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "format": "umc-profile",
+  "formatVersion": 2,
+  "name": "Survival",
+  "description": "Coordonnées, waypoints, mort et effets.",
+  "edition": "common",
+  "clientVersion": "1.1.0",
+  "modules": {
+    "coordinates": {
+      "enabled": true
+    },
+    "direction": {
+      "enabled": true
+    },
+    "waypoints": {
+      "enabled": true
+    },
+    "death_waypoint": {
+      "enabled": true
+    },
+    "potion_effects": {
+      "enabled": true
+    },
+    "armor_hud": {
+      "enabled": true
+    },
+    "time_hud": {
+      "enabled": true
+    },
+    "keystrokes": {
+      "enabled": false
+    },
+    "info_bar": {
+      "enabled": false
+    }
+  },
+  "theme": {
+    "accent": [
+      0.25,
+      0.82,
+      0.48,
+      1.0
+    ]
+  }
+}

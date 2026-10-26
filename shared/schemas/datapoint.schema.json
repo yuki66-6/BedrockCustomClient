@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "umc/datapoint.schema.json",
+  "title": "DataPoint",
+  "description": "Une donnée exposée par un GameAdapter, toujours accompagnée de sa disponibilité, de sa provenance et de sa fraîcheur. Une donnée indisponible n'a pas de valeur et porte un motif.",
+  "type": "object",
+  "required": ["availability", "source", "timestamp"],
+  "properties": {
+    "value": { "description": "Absente si availability ≠ available." },
+    "availability": {
+      "enum": ["available", "stale", "unavailable", "unsupported", "permission_required"],
+      "description": "available : valeur fiable ; stale : valeur trop ancienne ; unavailable : momentanément absente ; unsupported : l'édition/l'intégration ne peut pas la fournir ; permission_required : nécessite des droits (opérateur, triche activée…)."
+    },
+    "source": {
+      "enum": ["game_api", "raw_input", "window_manager", "server_query", "save_file", "overlay", "simulation", "user", "none"],
+      "description": "Provenance : API du jeu (mod Fabric), entrées clavier/souris, fenêtrage Windows, requête serveur publique, fichier de sauvegarde, mesure de l'overlay, simulation, saisie utilisateur."
+    },
+    "timestamp": { "type": "number", "description": "Secondes (horloge monotone) de la mesure." },
+    "maxAge": { "type": "number", "minimum": 0, "description": "Durée de validité en secondes ; au-delà la donnée devient stale. 0 = illimitée." },
+    "reason": { "type": "string", "description": "Motif lisible quand la donnée n'est pas disponible." }
+  }
+}

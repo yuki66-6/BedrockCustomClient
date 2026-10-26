@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "umc/profile.schema.json",
+  "title": "Profil Universal Minecraft Client (v2)",
+  "description": "Profil commun aux éditions Java et Bedrock. Les sections communes (modules, theme, hud) sont lues par les deux clients ; chaque édition ignore les modules qu'elle ne connaît pas. Les réglages propres à une édition vont dans « java » ou « bedrock ». Les profils v1 de Bedrock Custom Client ({\"format\": 1, \"sections\": …}) sont migrés automatiquement.",
+  "type": "object",
+  "required": ["format", "formatVersion"],
+  "properties": {
+    "format": { "const": "umc-profile" },
+    "formatVersion": { "const": 2 },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "edition": { "enum": ["common", "java", "bedrock"], "description": "Édition pour laquelle le profil a été créé ; « common » = profil prédéfini pour les deux." },
+    "clientVersion": { "type": "string" },
+    "modules": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "enabled": { "type": "boolean" },
+          "favorite": { "type": "boolean" },
+          "settings": { "type": "object" }
+        }
+      }
+    },
+    "theme": { "type": "object" },
+    "hud": { "type": "object" },
+    "java": { "type": "object", "description": "Réglages propres au mod Fabric." },
+    "bedrock": { "type": "object", "description": "Réglages propres à l'overlay Bedrock (client, gui…)." }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "format": "umc-profile",
+  "formatVersion": 2,
+  "name": "Crystal PvP Training",
+  "description": "Entraînement : totems, effets, CPS et durabilité.",
+  "edition": "common",
+  "clientVersion": "1.1.0",
+  "modules": {
+    "cps": {
+      "enabled": true
+    },
+    "totem_counter": {
+      "enabled": true
+    },
+    "potion_effects": {
+      "enabled": true
+    },
+    "armor_hud": {
+      "enabled": true
+    },
+    "info_bar": {
+      "enabled": true
+    },
+    "crosshair": {
+      "enabled": true
+    },
+    "keystrokes": {
+      "enabled": true
+    }
+  },
+  "theme": {
+    "accent": [
+      0.62,
+      0.42,
+      1.0,
+      1.0
+    ]
+  }
+}

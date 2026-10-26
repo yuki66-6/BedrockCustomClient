@@ -1,0 +1,21 @@
+{
+  "format": "umc-theme",
+  "formatVersion": 1,
+  "name": "Bleu nuit",
+  "description": "Identité visuelle par défaut (Bedrock Custom Client).",
+  "colors": {
+    "background": "#0A0D16F0",
+    "panel": "#151C2B9E",
+    "header": "#121726F0",
+    "text": "#EDEFF5",
+    "textDim": "#9EA3B3",
+    "accent": "#458AFF",
+    "success": "#4DDB85",
+    "warning": "#FFB84D",
+    "danger": "#F2525A"
+  },
+  "rounding": 6,
+  "uiScale": 1.0,
+  "animations": true,
+  "tilt": 0.55
+}

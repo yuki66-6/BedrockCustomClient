@@ -1,0 +1,46 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "format": "umc-profile",
+  "formatVersion": 2,
+  "name": "Exploration",
+  "description": "Navigation : coordonnées, direction, vitesse, waypoints, zoom.",
+  "edition": "common",
+  "clientVersion": "1.1.0",
+  "modules": {
+    "coordinates": {
+      "enabled": true
+    },
+    "direction": {
+      "enabled": true
+    },
+    "speed": {
+      "enabled": true
+    },
+    "waypoints": {
+      "enabled": true
+    },
+    "death_waypoint": {
+      "enabled": true
+    },
+    "zoom": {
+      "enabled": true
+    },
+    "time_hud": {
+      "enabled": true
+    },
+    "keystrokes": {
+      "enabled": false
+    },
+    "info_bar": {
+      "enabled": false
+    }
+  },
+  "theme": {
+    "accent": [
+      0.1,
+      0.78,
+      0.9,
+      1.0
+    ]
+  }
+}

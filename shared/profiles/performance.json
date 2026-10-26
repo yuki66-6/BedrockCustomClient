@@ -1,0 +1,34 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "format": "umc-profile",
+  "formatVersion": 2,
+  "name": "Performance",
+  "description": "HUD minimal et overlay économe.",
+  "edition": "common",
+  "clientVersion": "1.1.0",
+  "modules": {
+    "fps": {
+      "enabled": true
+    },
+    "info_bar": {
+      "enabled": true
+    },
+    "keystrokes": {
+      "enabled": false
+    }
+  },
+  "theme": {
+    "accent": [
+      0.27,
+      0.54,
+      1.0,
+      1.0
+    ],
+    "animations": false
+  },
+  "bedrock": {
+    "client": {
+      "fps_limit": 60
+    }
+  }
+}

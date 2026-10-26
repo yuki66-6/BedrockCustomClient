@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "umc/module-definition.schema.json",
+  "title": "Définitions de modules",
+  "type": "object",
+  "required": [
+    "format",
+    "formatVersion",
+    "modules"
+  ],
+  "properties": {
+    "format": {
+      "const": "umc-modules"
+    },
+    "formatVersion": {
+      "const": 1
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "name",
+          "editions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]{1,48}$",
+            "description": "Identifiant commun aux deux éditions (clé dans les profils)."
+          },
+          "category": {
+            "enum": [
+              "combat",
+              "movement",
+              "render",
+              "player",
+              "utility"
+            ]
+          },
+          "name": {
+            "type": "object",
+            "required": [
+              "fr",
+              "en"
+            ]
+          },
+          "description": {
+            "type": "object"
+          },
+          "requiredCapabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "none",
+                "operator",
+                "cheats_enabled",
+                "singleplayer"
+              ]
+            }
+          },
+          "editions": {
+            "type": "object",
+            "properties": {
+              "java": {
+                "$ref": "#/$defs/editionStatus"
+              },
+              "bedrock": {
+                "$ref": "#/$defs/editionStatus"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "editionStatus": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "tested",
+            "implemented",
+            "partial",
+            "unsupported",
+            "planned"
+          ],
+          "description": "tested : implémenté et couvert par des tests automatisés ; implemented : codé, non testé en jeu ; partial : fonctionne avec des limites (voir note) ; unsupported : impossible dans cette édition sans moyen non autorisé ; planned : prévu, pas encore codé (jamais affiché comme module)."
+        },
+        "versions": {
+          "type": "string",
+          "description": "Versions de Minecraft visées (ex. « 26.2 »)."
+        },
+        "note": {
+          "type": "string"
+        },
+        "providedBy": {
+          "enum": [
+            "module",
+            "map_page",
+            "launcher"
+          ],
+          "description": "Fourni par un module du ClickGUI (défaut), par la page Carte ou par le launcher."
+        }
+      }
+    }
+  }
+}

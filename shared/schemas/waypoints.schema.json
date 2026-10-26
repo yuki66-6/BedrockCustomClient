@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "umc/waypoints.schema.json",
+  "title": "Waypoints Universal Minecraft Client",
+  "description": "Waypoints classés par monde ou serveur, puis par dimension. Commun à Java et Bedrock ; sert aussi à l'import/export.",
+  "type": "object",
+  "required": ["format", "formatVersion", "worlds"],
+  "properties": {
+    "format": { "const": "umc-waypoints" },
+    "formatVersion": { "const": 1 },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": { "id": { "type": "string" }, "name": { "type": "string" }, "color": { "$ref": "#/$defs/color" } }
+      }
+    },
+    "worlds": {
+      "type": "object",
+      "description": "Clé = identifiant du monde : « java:sp:<dossier> », « java:mp:<adresse> », « bedrock:sp:<dossier> », « bedrock:realm:<nom> »…",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["waypoints"],
+        "properties": {
+          "name": { "type": "string" },
+          "edition": { "enum": ["java", "bedrock"] },
+          "kind": { "enum": ["singleplayer", "server", "realm", "unknown"] },
+          "waypoints": { "type": "array", "items": { "$ref": "#/$defs/waypoint" } }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "color": { "type": "string", "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$" },
+    "waypoint": {
+      "type": "object",
+      "required": ["id", "name", "x", "z", "dimension"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "x": { "type": "integer" },
+        "y": { "type": "integer" },
+        "z": { "type": "integer" },
+        "dimension": { "type": "string", "description": "« overworld », « nether », « end » ou identifiant complet (« minecraft:the_nether »)." },
+        "category": { "type": "string" },
+        "color": { "$ref": "#/$defs/color" },
+        "icon": { "enum": ["pin", "home", "star", "flag", "skull", "death"] },
+        "visible": { "type": "boolean" },
+        "createdAt": { "type": "integer", "description": "Horodatage Unix (secondes)." },
+        "source": { "enum": ["user", "death", "import", "extension"] }
+      }
+    }
+  }
+}

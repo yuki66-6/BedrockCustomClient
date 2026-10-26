@@ -1,0 +1,30 @@
+{
+  "format": "umc-capabilities",
+  "formatVersion": 1,
+  "description": "Capacités qu'un GameAdapter peut exposer. Chaque adaptateur (Java/Fabric, Bedrock/overlay) déclare pour chacune sa disponibilité et, sinon, le motif. Les identifiants sont communs au C++ et au Java.",
+  "capabilities": [
+    { "id": "keyboard_input",   "name": { "fr": "Clavier", "en": "Keyboard" } },
+    { "id": "mouse_input",      "name": { "fr": "Souris et CPS", "en": "Mouse and CPS" } },
+    { "id": "game_window",      "name": { "fr": "Fenêtre du jeu", "en": "Game window" } },
+    { "id": "game_fps",         "name": { "fr": "FPS du jeu", "en": "Game FPS" } },
+    { "id": "overlay_fps",      "name": { "fr": "FPS de l'overlay", "en": "Overlay FPS" } },
+    { "id": "server_latency",   "name": { "fr": "Latence serveur", "en": "Server latency" } },
+    { "id": "player_position",  "name": { "fr": "Position du joueur", "en": "Player position" } },
+    { "id": "player_rotation",  "name": { "fr": "Orientation du joueur", "en": "Player rotation" } },
+    { "id": "player_velocity",  "name": { "fr": "Vitesse du joueur", "en": "Player velocity" } },
+    { "id": "player_health",    "name": { "fr": "Santé", "en": "Health" } },
+    { "id": "player_hunger",    "name": { "fr": "Faim", "en": "Hunger" } },
+    { "id": "player_armor",     "name": { "fr": "Armure et durabilité", "en": "Armor and durability" } },
+    { "id": "inventory",        "name": { "fr": "Inventaire", "en": "Inventory" } },
+    { "id": "potion_effects",   "name": { "fr": "Effets de potion actifs", "en": "Active potion effects" } },
+    { "id": "dimension",        "name": { "fr": "Dimension actuelle", "en": "Current dimension" } },
+    { "id": "world_identity",   "name": { "fr": "Identité du monde / serveur", "en": "World / server identity" } },
+    { "id": "world_seed",       "name": { "fr": "Seed du monde", "en": "World seed" } },
+    { "id": "saved_world_map",  "name": { "fr": "Carte depuis les sauvegardes", "en": "Map from save files" } },
+    { "id": "death_events",     "name": { "fr": "Événements de mort", "en": "Death events" } },
+    { "id": "in_world_render",  "name": { "fr": "Rendu dans le monde", "en": "In-world rendering" } },
+    { "id": "fov_control",      "name": { "fr": "Contrôle du champ de vision", "en": "FOV control" } },
+    { "id": "movement_toggles", "name": { "fr": "Bascule sprint / accroupi", "en": "Sprint / sneak toggles" } },
+    { "id": "chat_commands",    "name": { "fr": "Commandes de chat autorisées", "en": "Permitted chat commands" } }
+  ]
+}

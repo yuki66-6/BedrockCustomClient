@@ -1,0 +1,37 @@
+{
+  "$schema": "../schemas/profile.schema.json",
+  "format": "umc-profile",
+  "formatVersion": 2,
+  "name": "Building",
+  "description": "Repérage précis et zoom, sans HUD de combat.",
+  "edition": "common",
+  "clientVersion": "1.1.0",
+  "modules": {
+    "coordinates": {
+      "enabled": true
+    },
+    "direction": {
+      "enabled": true
+    },
+    "zoom": {
+      "enabled": true
+    },
+    "waypoints": {
+      "enabled": true
+    },
+    "keystrokes": {
+      "enabled": false
+    },
+    "info_bar": {
+      "enabled": false
+    }
+  },
+  "theme": {
+    "accent": [
+      1.0,
+      0.58,
+      0.18,
+      1.0
+    ]
+  }
+}
